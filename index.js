@@ -3,9 +3,9 @@ const { connection } = require('./db');
 require('dotenv').config()
 const { userRoutes } = require('./Routes/user.routes');
 const { notesRoute } = require('./Routes/notes.routes');
-
+var cors = require('cors')
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 app.use("/users", userRoutes);
 app.use('/notes', notesRoute);
